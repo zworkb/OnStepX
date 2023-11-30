@@ -25,7 +25,7 @@
 #define DEBUG_SERVO                   OFF //    OFF, n. Where n=1 to 9 as the designated axis for logging servo activity.     Option
 #define DEBUG_ECHO_COMMANDS           OFF //    OFF, Use ON or ERRORS_ONLY to log commands to the debug serial port.          Option
 #define SERIAL_DEBUG               Serial // Serial, Use any available h/w serial port. Serial1 or Serial2, etc.              Option
-#define SERIAL_DEBUG_BAUD          230400 // 230400, n. Where n=9600,19200,57600,115200,230400,460800 (common baud rates.)    Option
+#define SERIAL_DEBUG_BAUD          115200 // 230400, n. Where n=9600,19200,57600,115200,230400,460800 (common baud rates.)    Option
 
 // NON-VOLATILE STORAGE ------------------------------------------------------------------------------------------------------------
 #define NV_WIPE                       OFF //         OFF, Causes the defaults to be written back into NV (FLASH,EEPROM,etc.)  Infreq
@@ -37,9 +37,11 @@
 // ESP32 VIRTUAL SERIAL BLUETOOTH AND IP COMMAND CHANNELS --------------------------------------------------------------------------
 #define SERIAL_BT_MODE                SLAVE //    OFF, Use SLAVE to enable the interface (ESP32 only.)                          Option
 #define SERIAL_BT_NAME                "OnStep Super Polaris" //         "OnStepX", Bluetooth device name.                                        Adjust
+
 #define SERIAL_IP_MODE                OFF //    OFF, WIFI_ACCESS_POINT or WIFI_STATION enables interface (ESP32 only.)        Option
-#define MDNS_NAME                     "onstepx" //    "onstepx", mDNS device name.                                                  Adjust
-#define WEB_SERVER                    OFF //    OFF, ON enables Webserver (for Website plugin.)                               Option
+#define MDNS_NAME                     "onstepx1" //    "onstepx", mDNS device name.                                                  Adjust
+#define WEB_SERVER                    ON //    OFF, ON enables Webserver (for Website plugin.)                               Option
+
 
 // EXTERNAL GPIO SUPPORT -----------------------------------------------------------------------------------------------------------
 #define GPIO_DEVICE                   OFF //    OFF, DS2413: for 2-ch or 4-ch using 1-wire gpio's (one or two devices.)       Option

@@ -30,6 +30,14 @@ Axis::Axis(uint8_t axisNumber, const AxisPins *pins, const AxisSettings *setting
   this->settings.limits = settings->limits;
   backlashFreq = settings->backlashFreq;
 
+  Serial.println("Axis::Axis");
+  SERIAL_DEBUG.print("axisNumber: ");
+  SERIAL_DEBUG.println(axisNumber);
+  SERIAL_DEBUG.print("reverse: ");
+  SERIAL_DEBUG.println(settings->reverse);
+
+  SERIAL_DEBUG.println(this->settings.reverse);
+
   // attach the function pointers to the callbacks
   axisWrapper[axisNumber - 1] = this;
   switch (axisNumber) {
