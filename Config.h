@@ -26,6 +26,7 @@
 #define SERIAL_C_BAUD_DEFAULT         OFF //    OFF, n. Baud rate as above. See (src/pinmaps/) for Serial port assignments.   Infreq
 #define SERIAL_D_BAUD_DEFAULT         OFF //    OFF, n. Baud rate as above. See (src/pinmaps/) for Serial port assignments.   Infreq
 #define SERIAL_E_BAUD_DEFAULT         OFF //    OFF, n. Baud rate as above. See (src/pinmaps/) for Serial port assignments.   Infreq
+#define SERIAL_RADIO                  OFF //    OFF, Use BLUETOOTH or WIFI_ACCESS_POINT or WIFI_STATION (ESP32 only.)         Option
 
 // STATUS --------------------------------------------- see https://onstep.groups.io/g/main/wiki/Configuration_Controller#STATUS_LED
 #define STATUS_LED                    OFF //    OFF, Steady illumination if no error, blinks w/error code otherwise.          Option
@@ -43,6 +44,8 @@
 // SIGNALING ------------------------------------------- see https://onstep.groups.io/g/main/wiki/Configuration_Controller#SIGNALING
 #define STEP_WAVE_FORM             SQUARE // SQUARE, PULSE Step signal wave form faster rates. SQUARE best signal integrity.  Adjust
                                           //         Applies to all axes.
+
+// NON-VOLATILE MEMORY ---------------------------------------- see https://onstep.groups.io/g/main/wiki/Configuration_Controller#NV
 
 // =================================================================================================================================
 // MOUNT ===========================================================================================================================
@@ -92,7 +95,7 @@
 // \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/ \/
 #define AXIS2_STEPS_PER_DEGREE      1617.78 //  12800, n. Number of steps per degree:                                          <-Req'd
                                           //         n = (stepper_steps * micro_steps * overall_gear_reduction)/360.0
-#define AXIS2_REVERSE                 ON //    OFF, ON Reverses movement direction, or reverse wiring instead to correct.   <-Often
+#define AXIS2_REVERSE                 OFF //    OFF, ON Reverses movement direction, or reverse wiring instead to correct.   <-Often
 #define AXIS2_LIMIT_MIN               -90 //    -90, n. Where n=-90..0 (degrees.) Minimum allowed Declination or Altitude.    Infreq
 #define AXIS2_LIMIT_MAX                90 //     90, n. Where n=0..90 (degrees.) Maximum allowed Declination or Altitude.     Infreq
 
@@ -140,10 +143,6 @@
                                           //         Provides Date/Time, and if available, PPS & Lat/Long also.
 #define TIME_LOCATION_PPS_SENSE       OFF //    OFF, HIGH senses PPS (pulse per second,) signal rising edge, or use LOW for   Option
                                           //         falling edge, or use BOTH for rising and falling edges.
-                                          //         Better tracking accuracy especially for Mega2560's w/ceramic resonator.
-
-// NON-VOLATILE MEMORY --------------------------------------------- see https://onstep.groups.io/g/main/wiki/Configuration_Mount#NV
-#define NV_DRIVER              NV_DEFAULT // NV_DEF, Use platforms default non-volatile device to remember runtime settings.  Option
 
 // STATUS ------------------------------------------------------ see https://onstep.groups.io/g/main/wiki/Configuration_Mount#STATUS
 #define STATUS_MOUNT_LED              OFF //    OFF, ON Flashes proportional to rate of movement or solid on for slews.       Option

@@ -19,8 +19,9 @@ class Pps {
 
     volatile bool synced = false;
 
-    volatile unsigned long averageMicros = 1000000;
-    volatile unsigned long lastMicros = 1000000;
+    volatile unsigned long averageSubMicros = 16000000UL;
+    long averageSubMicrosSkew = 0;
+    volatile unsigned long lastMicros = 0UL;
   private:
 };
 
